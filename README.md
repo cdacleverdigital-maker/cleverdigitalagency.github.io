@@ -246,3 +246,130 @@
   <script src="script.js"></script>
 </body>
 </html>
+/* style.css — simple, clean dark theme with orange accent */
+/* Change brand colors in :root if you want to adjust quickly */
+
+/* === BRAND COLORS: Update these if you want different accent === */
+:root{
+  --bg:#07090b;
+  --card:#0f1620;
+  --muted:#9aa3b2;
+  --text:#e6eef6;
+  --accent:#FF4500; /* primary accent — change if needed */
+  --accent-2:#ff7a3a;
+  --glass: rgba(255,255,255,0.04);
+  --container: 1100px;
+  --radius:12px;
+  --shadow: 0 6px 18px rgba(3,7,18,0.6);
+  --glass-2: rgba(255,255,255,0.02);
+}
+
+/* Basic reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:linear-gradient(180deg,var(--bg) 0%, #071022 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+/* Container */
+.container{
+  width:calc(100% - 40px);
+  max-width:var(--container);
+  margin:0 auto;
+}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg, rgba(7,9,11,0.7), rgba(7,9,11,0.3));backdrop-filter: blur(6px);border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo-link img{height:40px;display:block}
+
+/* Nav */
+.nav{display:block}
+.nav-list{list-style:none;margin:0;padding:0;display:flex;gap:18px;align-items:center}
+.nav-list a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px 12px;border-radius:8px}
+.nav-list a:hover{color:var(--text);background:var(--glass)}
+.cta{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;padding:8px 14px;border-radius:9px}
+
+/* Mobile nav toggle */
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:22px}
+
+/* Hero */
+.hero{padding:64px 0}
+.hero-inner{display:flex;gap:40px;align-items:center;justify-content:space-between}
+.hero-copy{flex:1;min-width:320px}
+.hero h1{font-size:36px;margin:0 0 12px}
+.lead{color:var(--muted);margin-bottom:18px}
+.hero-ctas{display:flex;gap:12px}
+.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:700;cursor:pointer;border:1px solid rgba(255,255,255,0.04)}
+.btn-primary{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:white;border:none;box-shadow:var(--shadow)}
+.btn-outline{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,0.06)}
+
+/* Hero media card */
+.hero-media{width:420px}
+.hero-card{background:linear-gradient(180deg,var(--card), rgba(15,22,32,0.85));padding:20px;border-radius:12px;box-shadow:var(--shadow)}
+.stats{list-style:none;padding:0;margin:12px 0 0;display:flex;gap:12px}
+.stats li{flex:1;background:var(--glass);padding:10px;border-radius:8px;text-align:center}
+.stats li strong{display:block;font-size:18px;color:var(--text)}
+
+/* Sections */
+.section{padding:56px 0}
+.section-title{font-size:24px;margin:0 0 8px}
+.section-sub{color:var(--muted);margin-bottom:24px}
+.dark-section{background:linear-gradient(180deg, rgba(6,8,10,0.25), rgba(6,8,12,0.05));border-top:1px solid rgba(255,255,255,0.02);border-bottom:1px solid rgba(255,255,255,0.02)}
+
+/* Cards grid */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.02)}
+
+/* Analyzer */
+.analyzer{display:flex;gap:12px;align-items:center;margin:18px 0}
+.input{background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 12px;border-radius:10px;color:var(--text);min-width:0}
+.analysis-result{margin-top:18px;background:var(--glass-2);padding:14px;border-radius:10px;border:1px solid rgba(255,255,255,0.02)}
+
+/* Portfolio grid */
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.work-card{background:var(--card);border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.03)}
+.work-card img{width:100%;height:160px;object-fit:cover;display:block}
+.work-card figcaption{padding:12px}
+
+/* Team */
+.team-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:12px}
+.team-card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:12px;border-radius:10px;text-align:center}
+.team-card img{width:100%;height:160px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+
+/* Contact form */
+.contact-inner{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+.contact-copy{padding:12px}
+.contact-form{background:var(--card);padding:18px;border-radius:12px;box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.03)}
+.label-text{display:block;color:var(--muted);font-size:13px;margin-bottom:6px}
+.form-row{display:flex;gap:12px;margin-top:12px;align-items:center}
+.features{list-style:none;padding:0;margin:12px 0 0}
+
+/* Footer */
+.site-footer{padding:22px 0;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+.footer-nav a{color:var(--muted);text-decoration:none;margin-left:12px}
+.socials a{margin-left:10px;color:var(--muted);text-decoration:none}
+
+/* Utilities */
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.hidden{display:none}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-inner{flex-direction:column}
+  .hero-media{width:100%}
+  .contact-inner{grid-template-columns:1fr}
+  .nav-list{display:none}
+  .nav-toggle{display:block}
+  .nav.mobile-open .nav-list{display:flex;flex-direction:column;background:transparent;position:absolute;right:20px;top:68px;padding:12px;border-radius:10px;gap:10px}
+  .container{width:calc(100% - 30px)}
+}
